@@ -11,12 +11,39 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="external_libs" Type="Folder"/>
 		<Item Name="main_VIs" Type="Folder">
 			<Item Name="config_files" Type="Folder"/>
-			<Item Name="AP2_photoelectron_image_aquisition.vi" Type="VI" URL="../sub_VIs/oscilloscope_VIs/AP2_photoelectron_image_aquisition.vi"/>
+			<Item Name="AP2_PDS_aquisition.vi" Type="VI" URL="../sub_VIs/general_VIs/AP2_PDS_aquisition.vi"/>
+			<Item Name="AP2_photoelectron_image_aquisition.vi" Type="VI" URL="../main_VIs/AP2_photoelectron_image_aquisition.vi"/>
 			<Item Name="AP2_scope_viewer.vi" Type="VI" URL="../main_VIs/AP2_scope_viewer.vi"/>
+			<Item Name="AP_2_launcher.vi" Type="VI" URL="../main_VIs/AP_2_launcher.vi"/>
+			<Item Name="doubling_spline_generation.vi" Type="VI" URL="../main_VIs/doubling_spline_generation.vi"/>
 		</Item>
 		<Item Name="sub_VIs" Type="Folder">
+			<Item Name="freq_doubling_VIs" Type="Folder">
+				<Item Name="gen_doubling_spline_file_name.vi" Type="VI" URL="../sub_VIs/freq_doubling_VIs/gen_doubling_spline_file_name.vi"/>
+				<Item Name="generate_tuning_spline.vi" Type="VI" URL="../sub_VIs/freq_doubling_VIs/generate_tuning_spline.vi"/>
+				<Item Name="optimise_BBO_position.vi" Type="VI" URL="../sub_VIs/freq_doubling_VIs/optimise_BBO_position.vi"/>
+			</Item>
+			<Item Name="general_VIs" Type="Folder">
+				<Item Name="generate_list.vi" Type="VI" URL="../sub_VIs/general_VIs/generate_list.vi"/>
+			</Item>
+			<Item Name="laser_VIs" Type="Folder">
+				<Item Name="go_to_BBO_position.vi" Type="VI" URL="../sub_VIs/laser_VIs/go_to_BBO_position.vi"/>
+				<Item Name="go_to_wavelength.vi" Type="VI" URL="../sub_VIs/laser_VIs/go_to_wavelength.vi"/>
+				<Item Name="go_to_wavelength_doubled.vi" Type="VI" URL="../main_VIs/go_to_wavelength_doubled.vi"/>
+				<Item Name="read_doubling_spline.vi" Type="VI" URL="../sub_VIs/laser_VIs/read_doubling_spline.vi"/>
+				<Item Name="send_laser_command.vi" Type="VI" URL="../sub_VIs/laser_VIs/send_laser_command.vi"/>
+			</Item>
+			<Item Name="Orphir_LLM_VIs" Type="Folder">
+				<Item Name="end_laser_q.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/end_laser_q.vi"/>
+				<Item Name="end_power_measurements.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/end_power_measurements.vi"/>
+				<Item Name="get_average_laser_power.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/get_average_laser_power.vi"/>
+				<Item Name="get_power_reading.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/get_power_reading.vi"/>
+				<Item Name="init_laser_power_Q.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/init_laser_power_Q.vi"/>
+				<Item Name="start_power_measurments.vi" Type="VI" URL="../sub_VIs/Orphir_LLM_VIs/start_power_measurments.vi"/>
+			</Item>
 			<Item Name="oscilloscope_VIs" Type="Folder">
 				<Item Name="add_scope_waveforms.vi" Type="VI" URL="../sub_VIs/oscilloscope_VIs/add_scope_waveforms.vi"/>
 				<Item Name="aquire_channels.vi" Type="VI" URL="../sub_VIs/oscilloscope_VIs/aquire_channels.vi"/>
@@ -46,14 +73,21 @@
 				<Item Name="write_new_values_to_scope_controls.vi" Type="VI" URL="../sub_VIs/oscilloscope_VIs/write_new_values_to_scope_controls.vi"/>
 			</Item>
 			<Item Name="PES_aquisition" Type="Folder">
+				<Property Name="NI.SortType" Type="Int">3</Property>
 				<Item Name="aquire_FPS.vi" Type="VI" URL="../sub_VIs/PES_aquisition/aquire_FPS.vi"/>
 				<Item Name="aquire_image.vi" Type="VI" URL="../sub_VIs/PES_aquisition/aquire_image.vi"/>
+				<Item Name="count_electrons.vi" Type="VI" URL="../sub_VIs/PES_aquisition/count_electrons.vi"/>
 				<Item Name="extract_and_process_image.vi" Type="VI" URL="../sub_VIs/PES_aquisition/extract_and_process_image.vi"/>
+				<Item Name="extract_image_and_count_electrons.vi" Type="VI" URL="../sub_VIs/PES_aquisition/extract_image_and_count_electrons.vi"/>
 				<Item Name="gen_i0X_data.vi" Type="VI" URL="../sub_VIs/PES_aquisition/gen_i0X_data.vi"/>
+				<Item Name="init_electron_count_Q.vi" Type="VI" URL="../sub_VIs/PES_aquisition/init_electron_count_Q.vi"/>
 				<Item Name="init_img_processing_vars.vi" Type="VI" URL="../sub_VIs/PES_aquisition/init_img_processing_vars.vi"/>
+				<Item Name="PDS_name_generation.vi" Type="VI" URL="../sub_VIs/PES_aquisition/PDS_name_generation.vi"/>
 				<Item Name="init_img_Q.vi" Type="VI" URL="../sub_VIs/PES_aquisition/init_img_Q.vi"/>
 				<Item Name="initialise_image_aquisition.vi" Type="VI" URL="../sub_VIs/PES_aquisition/initialise_image_aquisition.vi"/>
+				<Item Name="PDS_scan.vi" Type="VI" URL="../sub_VIs/PES_aquisition/PDS_scan.vi"/>
 				<Item Name="process_image.vi" Type="VI" URL="../sub_VIs/PES_aquisition/process_image.vi"/>
+				<Item Name="save_PDS_data.vi" Type="VI" URL="../sub_VIs/PES_aquisition/save_PDS_data.vi"/>
 				<Item Name="save_PES_image.vi" Type="VI" URL="../sub_VIs/PES_aquisition/save_PES_image.vi"/>
 				<Item Name="term_img_Q.vi" Type="VI" URL="../sub_VIs/PES_aquisition/term_img_Q.vi"/>
 				<Item Name="terminate_image_aquisition.vi" Type="VI" URL="../sub_VIs/PES_aquisition/terminate_image_aquisition.vi"/>
@@ -124,6 +158,7 @@
 				<Item Name="compatCalcOffset.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatCalcOffset.vi"/>
 				<Item Name="compatFileDialog.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatFileDialog.vi"/>
 				<Item Name="compatOpenFileOperation.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatOpenFileOperation.vi"/>
+				<Item Name="compatReadText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatReadText.vi"/>
 				<Item Name="compatWriteText.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/compatWriteText.vi"/>
 				<Item Name="Convert property node font to graphics font.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Convert property node font to graphics font.vi"/>
 				<Item Name="Details Display Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Details Display Dialog.vi"/>
@@ -157,42 +192,16 @@
 				<Item Name="GetHelpDir.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetHelpDir.vi"/>
 				<Item Name="GetRTHostConnectedProp.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/GetRTHostConnectedProp.vi"/>
 				<Item Name="I128 Timestamp.ctl" Type="VI" URL="/&lt;vilib&gt;/Waveform/TSOps.llb/I128 Timestamp.ctl"/>
-				<Item Name="Image Type" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/Image Type"/>
-				<Item Name="IMAQ Attribute.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqhl.llb/IMAQ Attribute.vi"/>
 				<Item Name="IMAQ Close.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqhl.llb/IMAQ Close.vi"/>
 				<Item Name="IMAQ Configure Buffer.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqll.llb/IMAQ Configure Buffer.vi"/>
 				<Item Name="IMAQ Configure List.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqll.llb/IMAQ Configure List.vi"/>
 				<Item Name="IMAQ Configure Trigger3.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqsignalio.llb/IMAQ Configure Trigger3.vi"/>
 				<Item Name="IMAQ Create" Type="VI" URL="/&lt;vilib&gt;/vision/Basics.llb/IMAQ Create"/>
-				<Item Name="IMAQ Extract Buffer Old Style.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/IMAQ Extract Buffer Old Style.vi"/>
 				<Item Name="IMAQ Extract Buffer.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqll.llb/IMAQ Extract Buffer.vi"/>
 				<Item Name="IMAQ Image.ctl" Type="VI" URL="/&lt;vilib&gt;/vision/Image Controls.llb/IMAQ Image.ctl"/>
 				<Item Name="IMAQ Init.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqhl.llb/IMAQ Init.vi"/>
 				<Item Name="IMAQ Start.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqll.llb/IMAQ Start.vi"/>
 				<Item Name="IMAQ Status.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/imaqll.llb/IMAQ Status.vi"/>
-				<Item Name="IMAQRegisterSession.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/IMAQRegisterSession.vi"/>
-				<Item Name="IMAQUnregisterSession.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/IMAQUnregisterSession.vi"/>
-				<Item Name="imgBufferElement.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgBufferElement.vi"/>
-				<Item Name="imgClose.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgClose.vi"/>
-				<Item Name="imgCreateBufList.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgCreateBufList.vi"/>
-				<Item Name="imgDisposeBufList.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgDisposeBufList.vi"/>
-				<Item Name="imgEnsureEqualBorders.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgEnsureEqualBorders.vi"/>
-				<Item Name="imgGetBufList.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgGetBufList.vi"/>
-				<Item Name="imgInterfaceOpen.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgInterfaceOpen.vi"/>
-				<Item Name="imgIsNewStyleInterface.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgIsNewStyleInterface.vi"/>
-				<Item Name="imgMemLock.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgMemLock.vi"/>
-				<Item Name="imgSessionAcquire.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionAcquire.vi"/>
-				<Item Name="imgSessionAttribute.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionAttribute.vi"/>
-				<Item Name="imgSessionConfigure.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionConfigure.vi"/>
-				<Item Name="imgSessionExamineBuffer.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionExamineBuffer.vi"/>
-				<Item Name="imgSessionLineTrigSource2.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionLineTrigSource2.vi"/>
-				<Item Name="imgSessionOpen.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionOpen.vi"/>
-				<Item Name="imgSessionReleaseBuffer.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionReleaseBuffer.vi"/>
-				<Item Name="imgSessionStatus.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionStatus.vi"/>
-				<Item Name="imgSessionTriggerConfigure3.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSessionTriggerConfigure3.vi"/>
-				<Item Name="imgSetRoi.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgSetRoi.vi"/>
-				<Item Name="imgUpdateErrorCluster.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgUpdateErrorCluster.vi"/>
-				<Item Name="imgWaitForIMAQOccurrence.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/imgWaitForIMAQOccurrence.vi"/>
 				<Item Name="Longest Line Length in Pixels.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Longest Line Length in Pixels.vi"/>
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
@@ -202,11 +211,18 @@
 				<Item Name="NI_MAPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/measure/NI_MAPro.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Number of Waveform Samples.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/WDTOps.llb/Number of Waveform Samples.vi"/>
+				<Item Name="Open File+.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Open File+.vi"/>
 				<Item Name="Open_Create_Replace File.vi" Type="VI" URL="/&lt;vilib&gt;/_oldvers/_oldvers.llb/Open_Create_Replace File.vi"/>
+				<Item Name="Read Delimited Spreadsheet (DBL).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (DBL).vi"/>
+				<Item Name="Read Delimited Spreadsheet (I64).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (I64).vi"/>
+				<Item Name="Read Delimited Spreadsheet (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet (string).vi"/>
+				<Item Name="Read Delimited Spreadsheet.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Delimited Spreadsheet.vi"/>
+				<Item Name="Read File+ (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read File+ (string).vi"/>
+				<Item Name="Read Lines From File (with error IO).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Read Lines From File (with error IO).vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
-				<Item Name="SessionLookUp.vi" Type="VI" URL="/&lt;vilib&gt;/vision/driver/DLLCalls.llb/SessionLookUp.vi"/>
 				<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
 				<Item Name="Set String Value.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set String Value.vi"/>
+				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
 				<Item Name="subDisplayMessage.vi" Type="VI" URL="/&lt;vilib&gt;/express/express output/DisplayMessageBlock.llb/subDisplayMessage.vi"/>
 				<Item Name="subFile Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/express/express input/FileDialogBlock.llb/subFile Dialog.vi"/>
 				<Item Name="TagReturnType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/TagReturnType.ctl"/>
@@ -247,14 +263,8 @@
 				<Item Name="Write To Spreadsheet File (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (string).vi"/>
 				<Item Name="Write To Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File.vi"/>
 			</Item>
-			<Item Name="imaq.dll" Type="Document" URL="imaq.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="niScope_64.dll" Type="Document" URL="niScope_64.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
-			</Item>
-			<Item Name="nivissvc.dll" Type="Document" URL="nivissvc.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 		</Item>
